@@ -8,7 +8,6 @@
 <script>
   import Header from './components/component/header'
   import Footer from './components/component/footer'
-  import store from './store/index'
 export default {
   name: 'App',
   components:{

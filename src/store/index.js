@@ -2,7 +2,11 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 import logger from 'vuex/dist/logger'; // logger是一个日志插件
-const state = {n:0};
+const state = {
+  token: '',
+  userId: '',
+  phone: ''
+};
 // const getters = {
 //   val:(state)=>state.count%2?'奇数':'偶数'
 // };
