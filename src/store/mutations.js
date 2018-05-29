@@ -4,5 +4,10 @@ const mutations = {
     state.userId = data.userId;
     state.phone = data.phone;
   },
+  delUserData(state){
+    state.token = '';
+    state.userId = '';
+    state.phone = '';
+  },
 };
 export default mutations;
