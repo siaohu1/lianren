@@ -53,6 +53,7 @@
 <script>
   import * as apiRequest from '../../api/api'
   import Header from '../component/header'
+  import { mapMutations } from 'vuex'
   export default {
     name: "login",
     data(){
@@ -62,6 +63,7 @@
       }
     },
     methods:{
+      ...mapMutations(['setUserData']),
       login(){
         var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
         var myreg1 =/^[a-zA-Z]\w{5,17}$/;
@@ -82,6 +84,7 @@
           .then(
           data=>{
             if(data.code===0){
+              this.setUserData(data.data)
               alert("登录成功")
               this.$router.push('/');
             }else{

@@ -19,10 +19,10 @@
       </section>
       <section class="nav_bar1">
         <p @click="n=0">
-          <router-link to="/login">
-            <a href="javascript:;" v-show="m==1">登录/注册</a>
+          <a href="javascript:;" v-if="token">{{phone}} <span id="jiantou"></span></a>
+          <router-link to="/login" v-else>
+            <a href="javascript:;">登录/注册</a>
           </router-link>
-          <a href="javascript:;" v-show="m==0">zaprey <span id="jiantou"></span></a>
           <a href="javascript:;">帮助</a>
         </p>
       </section>
@@ -31,14 +31,16 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: "header",
     data(){
       return{
         n:1,
-        m:1,
-
       }
+    },
+    computed: {
+      ...mapState(['token', 'userId', 'phone'])
     }
   }
 </script>
